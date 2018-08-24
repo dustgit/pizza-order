@@ -11,16 +11,14 @@ Pizza.prototype.pricing = function() {
     this.basePrice += 5;
   } else if (this.size === "twentyInch") {
     this.basePrice += 10;
-  }
-  this.basePrice += this.toppings.length;
-console.log(this.toppings.length + "");
   return this.basePrice;
+  }
 }
 
 
 // user interface logic
 $(document).ready(function() {
-  $("form#userInput").submit(function(event) {
+  $("#userInput").submit(function(event) {
     event.preventDefault();
 
     var inputName = $("input#userName").val();
@@ -28,14 +26,16 @@ $(document).ready(function() {
     var inputSize = $("input[name=size]:checked").val();
     console.log(inputSize);
     var inputToppings = [];
-    inputToppings = $("input[name=toppings]:checked").each(function() {
-    inputToppings.push($(this).val())});
+    $("input[name=toppings]:checked").each(function() {
+    inputToppings.push($(this).val())
+  });
     console.log(inputToppings);
 
     var onePizza = new Pizza(inputSize, inputToppings);
     var total = onePizza.pricing();
-    $(".pizzaSize").text(newPizza.pizzaSize);
-    $("#displaytotal").text(newPizza.basePrice);
+    $("#displayToppings").text(onePizza.basePrice);
+    $("#displaySize").text(onePizza.size);
+    $("#displyTotal").text(onePizza.total);
     $("#orderReceipt").show();
 
   });
