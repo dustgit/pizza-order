@@ -7,10 +7,11 @@ function Pizza(name, size, toppings) {
 }
 
 Pizza.prototype.pricing = function() {
-  if (this.size === "fifteenInch") {
+  if (this.size === " Fifteen Inches") {
     this.basePrice += 5;
-  } else if (this.size === "twentyInch") {
+  } else if (this.size === " Fifteen Inches") {
     this.basePrice += 10;
+    console.log(basePrice+ " Twenty Inches");
   return this.basePrice;
   }
 }
@@ -22,21 +23,18 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputName = $("input#userName").val();
-    console.log(inputName);
+
     var inputSize = $("input[name=size]:checked").val();
-    console.log(inputSize);
     var inputToppings = [];
     $("input[name=toppings]:checked").each(function() {
     inputToppings.push($(this).val())
   });
-    console.log(inputToppings);
 
     var onePizza = new Pizza(inputSize, inputToppings);
-    var total = onePizza.pricing();
+    var total = parseInt(onePizza.pricing());
+    $("#orderReceipt").show();
     $("#displayToppings").text(onePizza.basePrice);
     $("#displaySize").text(onePizza.size);
-    $("#displyTotal").text(onePizza.total);
-    $("#orderReceipt").show();
-
+    $("#displayTotal").text(onePizza.basePrice);
   });
 });
