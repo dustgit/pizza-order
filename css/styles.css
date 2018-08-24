@@ -1,0 +1,20 @@
+body {
+  /* background-color: darkblue; */
+  font-family: 'Ranchers', cursive;
+  font-size: 30px;
+}
+#orderReceipt {
+  background-color: lightgray;
+}
+
+h1 {
+  background-position: center;
+  background-color: lightgray;
+  text-align: center;
+}
+
+#create {
+  text-shadow: black;
+  font-size: 18px;
+
+}

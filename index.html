@@ -5,6 +5,7 @@
     <title>Pizza Order</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ranchers" rel="stylesheet">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
     </head>
@@ -13,8 +14,8 @@
         <h1>Pizza Planet</h1>
         <h3>Enter your name to begin: </h3>
         <form class="pizzaForm" action="index.html" method="post">
-          <div class="pizzaName">
-            <input type="text" id="name" value="">
+          <div class="userName">
+            <input type="text" id="userName" value="">
           </div>
           <div class="pizzaSize">
             <label for="pizzaSize">How hungry are you, earthling?</label>
@@ -32,8 +33,16 @@
             <input type="checkbox" class="toppings" value="olives">Pitted black brined fruit
             <input type="checkbox" class="toppings" value="carnage">Varied ungulate animals
           </div>
-            <button type="submit" id="create">Synthesize pizza!</button>
+            <button type="submit" class= "btn btn-info" id="create">Synthesize pizza!</button>
         </form>
+        <div id="orderReceipt">
+          <h4>Toppings: </h4>
+          <p><span id="displayToppings"></span></p>
+          <h4>Size: </h4>
+          <p><span id="displaySize"></span></p>
+          <h3>Synthesized Payment: </h3>
+          <p><span id="displaytotal"></span></p>
+        </div>
       </div>
   </body>
 </html>

@@ -37,6 +37,8 @@ Pizza.prototype.pizzaCost = function(toppingsNumber) {
 $(document).ready(function() {
   $("form#pizzaForm").submit(function(event) {
     event.preventDefault();
-    var userName = $("input#name").val();
-    var pizzaSize = $("input#size").val();
-    var pizzaToppings = $()
+    var userName = $("input#userName").val();
+    var pizzaSize = $("input.pizzaSize").val();
+    var pizzaToppings = $(".toppings:checkbox:checked").val();
+    console.log(userName + " " + pizzaSize + " " + pizzaToppings);
+  });
