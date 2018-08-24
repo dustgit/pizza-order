@@ -1,11 +1,16 @@
+#orderReceipt {
+  display: none;
+  background-color: lightgray;
+}
+
 body {
   /* background-color: darkblue; */
   font-family: 'Ranchers', cursive;
   font-size: 30px;
 }
-#orderReceipt {
-  background-color: lightgray;
-}
+
+
+
 
 h1 {
   background-position: center;
