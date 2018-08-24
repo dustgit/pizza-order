@@ -1,5 +1,5 @@
 // business logic
-function Pizza(name, size, toppings, basePrice) {
+function Pizza(name, size, toppings) {
   this.name = name;
   this.size = size;
   this.toppings = toppings;
@@ -7,31 +7,33 @@ function Pizza(name, size, toppings, basePrice) {
 }
 
 Pizza.prototype.pricing = function() {
-
   if (this.size === "fifteenInch") {
     this.basePrice += 5;
   } else if (this.size === "twentyInch") {
     this.basePrice += 10;
   }
-  this.baseprice += this.toppings.length;
-  return this.baseprice;
+  this.basePrice += this.toppings.length;
+console.log(this.toppings.length + "");
+  return this.basePrice;
 }
 
 
 // user interface logic
 $(document).ready(function() {
-  $("form#pizzaForm").submit(function(event) {
+  $("form#userInput").submit(function(event) {
     event.preventDefault();
-    $("#orderReceipt").show();
 
     var inputName = $("input#userName").val();
-    var inputSize = $("#sizeSelected").val();
+    console.log(inputName);
+    var inputSize = $("input[name=size]:checked").val();
+    console.log(inputSize);
     var inputToppings = [];
-     $("input:checkbox:checked").each() {inputToppings.push($(this).val());}
-    console.log(inputName + " " + inputSize + " " + inputToppings);
+    inputToppings = $("input[name=toppings]:checked").each(function() {
+    inputToppings.push($(this).val())});
+    console.log(inputToppings);
 
     var onePizza = new Pizza(inputSize, inputToppings);
-    var total = newPizza.pricing();
+    var total = onePizza.pricing();
     $(".pizzaSize").text(newPizza.pizzaSize);
     $("#displaytotal").text(newPizza.basePrice);
     $("#orderReceipt").show();

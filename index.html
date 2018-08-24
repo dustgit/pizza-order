@@ -11,27 +11,27 @@
     </head>
   <body>
       <div class="container">
-        <h1>Pizza Planet</h1>
-        <h3>Enter your name to begin: </h3>
-        <form class="pizzaForm" action="index.html" method="post">
+        <div id= "header">
+          <h1>Pizza Planet</h1>
+        </div>
+        <form class="pizzaForm" id="userInput" action="index.html" method="post">
+          <h3>Enter your name to begin: </h3>
           <div class="userName">
             <input type="text" id="userName" value="">
           </div>
           <div class="form-group">
-            <label for="pizzaSize">How hungry are you, earthling?</label>
-            <select class="pizzaSize" id="sizeSelected">
-              <option value="tweleveInch">12 inch</option>
-              <option value="fifteenInch">15 inch</option>
-              <option value="twentyInch">20 inch</option>
-            </select>
+            <label for="pizzaSize" id="sizeSelected">How hungry are you, earthling?></label>
+              <label><input type= "radio" name="size" value="tweleveInch">12 inch</label>
+              <label><input type= "radio" name="size" value="fifteenInch">15 inch</label>
+              <label><input type= "radio" name="size" value="twentyInch">20 inch</label>
           </div>
           <div class="pizzaToppings">
-            <input type="checkbox" class="toppings" value="fourCheese">A dairy overload
-            <input type="checkbox" class="toppings" value="onionBrie">Allium and more dairy
-            <input type="checkbox" class="toppings" value="crimini">Fungus
-            <input type="checkbox" class="toppings" value="spinach">Plant matter
-            <input type="checkbox" class="toppings" value="olives">Pitted black brined fruit
-            <input type="checkbox" class="toppings" value="carnage">Varied ungulate animals
+            <input type="checkbox" name="toppings" value="fourCheese">A dairy overload
+            <input type="checkbox" name="toppings" value="onionBrie">Allium and more dairy
+            <input type="checkbox" name="toppings" value="crimini">Fungus
+            <input type="checkbox" name="toppings" value="spinach">Plant matter
+            <input type="checkbox" name="toppings" value="olives">Pitted black brined fruit
+            <input type="checkbox" name="toppings" value="carnage">Varied ungulate animals
           </div>
             <button type="submit" class= "btn btn-info" id="create">Synthesize pizza!</button>
         </form>
