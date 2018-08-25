@@ -1,19 +1,17 @@
 // business logic
-function Pizza(name, size, toppings) {
-  this.name = name;
+function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
   this.basePrice = 10;
 }
 
 Pizza.prototype.pricing = function() {
-  if (this.size === " Fifteen Inches") {
+    if (this.size == 15) {
     this.basePrice += 5;
-  } else if (this.size === " Fifteen Inches") {
+  } else if (this.size == 20) {
     this.basePrice += 10;
-    console.log(basePrice+ " Twenty Inches");
-  return this.basePrice;
   }
+  return this.basePrice;
 }
 
 
@@ -33,8 +31,9 @@ $(document).ready(function() {
     var onePizza = new Pizza(inputSize, inputToppings);
     var total = parseInt(onePizza.pricing());
     $("#orderReceipt").show();
-    $("#displayToppings").text(onePizza.basePrice);
+    $("#displayToppings").text(onePizza.toppings);
     $("#displaySize").text(onePizza.size);
     $("#displayTotal").text(onePizza.basePrice);
+debugger;
   });
 });
