@@ -30,10 +30,11 @@ $(document).ready(function() {
 
     var onePizza = new Pizza(inputSize, inputToppings);
     var total = parseInt(onePizza.pricing());
+    $("#output").append(inputName);
     $("#orderReceipt").show();
     $("#displayToppings").text(onePizza.toppings);
     $("#displaySize").text(onePizza.size);
     $("#displayTotal").text(onePizza.basePrice);
-debugger;
+
   });
 });

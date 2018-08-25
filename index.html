@@ -17,7 +17,7 @@
         <form class="pizzaForm" id="userInput" action="index.html" method="post">
           <h3>Enter your name to begin: </h3>
           <div class="userName">
-            <input type="text" id="userName" value="">
+            <input type="text" id="userName">
           </div>
           <div class="form-group">
             <label for="pizzaSize" id="sizeSelected">How hungry are you, earthling? Please select from a variety of diameters: </label>
@@ -36,13 +36,13 @@
             <button type="submit" class= "btn btn-info" id="create">Synthesize pizza!</button>
         </form>
         <div id="orderReceipt">
-          <h2>Human: <span id="userName"> Your synthesized pizza is as follows:<br>
+          <h2>Human: *<span id="output"></span>* Your synthesized pizza is as follows:<br>
             Toppings: </h2>
           <p><span id="displayToppings"></span></p>
-          <h4>Size: </h4>
+          <h2>Size: </h4>
           <p><span id="displaySize"></span></p>
-          <h3>Synthesized Payment will require this many Earth credits:</h3>
-          <p><span id="displayTotal"></span></p>
+          <h2>Synthesized Payment will require this many Earth credits:</h2>
+          <p>$<span id="displayTotal"></span></p>
         </div>
       </div>
   </body>
